@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CTOApp.View.Clientes.VerCreditos">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+
+                <StackLayout Grid.Row="0" Spacing="10">
+                    <Image Source="fondo.jpg" Aspect="AspectFill"/>
+                    <Label x:Name="lblMensaje" Text="No hay créditos que mostrar" FontSize="Medium" FontAttributes="Bold" TextColor="SaddleBrown" IsVisible="False"/>
+                </StackLayout>
+
+                <CollectionView x:Name="cvCreditos" SelectionMode="Single" SelectionChanged="cvCreditos_SelectionChanged" ItemSizingStrategy="MeasureAllItems" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Frame Grid.Row="0" BorderColor="LightGray" Margin="5" CornerRadius="15" HeightRequest="150">
+                                    <Frame.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="tc_active" WidthRequest="100" HeightRequest="80" Aspect="AspectFit" Grid.Column="0" VerticalOptions="Start"/>
+                                            <StackLayout Orientation="Vertical" Grid.Column="1">
+                                                <Label Text="No. Pagare" TextColor="SandyBrown" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                                <Label Text="{Binding PAGARE}" VerticalOptions="CenterAndExpand"/>
+                                                <Label Text="Fecha Ministración" TextColor="SandyBrown" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                                <Label Text="{Binding FDESEMBOLSO}" VerticalOptions="CenterAndExpand"/>
+                                                <Label Text="Monto" TextColor="SandyBrown" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                                <Label Text="{Binding MONTO, StringFormat='{0:C}'}"  VerticalOptions="CenterAndExpand"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame.Content>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

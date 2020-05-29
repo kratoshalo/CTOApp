@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CTOApp.View.Clientes.ClientePF">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--          Header                  -->
+                <Image Source="fondo.png" Aspect="AspectFill" VerticalOptions="End"/>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="StartAndExpand">
+                        <Button x:Name="btnLlamar" Text="Llamar" BackgroundColor="Transparent" TextColor="SaddleBrown" FontAttributes="Bold" Clicked="btnLlamar_Clicked" />
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <Button x:Name="btnCreditos" Text="Ver Creditos" BackgroundColor="Transparent" TextColor="SaddleBrown" FontAttributes="Bold" 
+                                Clicked="btnCreditos_Clicked" />
+                    </StackLayout>                   
+                    
+                </StackLayout>
+
+
+                <!--          Profile Cliente Name                  -->
+                <StackLayout Grid.Row="2" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Id: " WidthRequest="50" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioId}" TextColor="Black" FontAttributes="Italic" FontSize="Small" x:Name="lblId"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Cliente}" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha Nac: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioFNacimiento}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Edad: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioEdad}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Genero: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioSexo}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="CURP: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioCURP}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="RFC: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioRFC}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Edo. Civil: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding tipoestadocivilNombre}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Lugar Nac.: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding LugarNacimiento}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nacionalidad: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding tiponacionalidadNombre}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="País Nac.: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding PaisNacimiento}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Actividad: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding actividadeconomicaNombre}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ocupacion: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioOcupacionGiro}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Edo. Civil: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding tipoestadocivilNombre}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Dirección: " WidthRequest="200" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding Direccion}" TextColor="Black" FontAttributes="Italic" FontSize="Small" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Teléfono: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding sociodomicilioTelefono}" TextColor="Black" FontAttributes="Italic" FontSize="Small" x:Name="lblTelefono" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Socio Desde: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding socioFVigencia}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Es PPE: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding PPE}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Grado Riesgo: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding gradoRiesgo}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Persona Bloq: " WidthRequest="100" TextColor="SandyBrown" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="{Binding lpBloqueadas}" TextColor="Black" FontAttributes="Italic" FontSize="Small"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!--          Profile Client Otros Datos                  -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="SandyBrown" Grid.Row="3" IsVisible="False">
+                    <Label Text="CONVENGAMOS TODOS SA DE CV SOFOM ENR" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" TextColor="White"/>
+                </StackLayout>
+
+                <!--          Profile Image                 
+                <Image Source="user.png" Grid.Row="0"
+                       Aspect="AspectFit"
+                       VerticalOptions="End"
+                       HorizontalOptions="Center"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       TranslationY="30"                       
+                       />
+                 -->
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CTOApp.MainPage"
+            BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Spacing="10">
+            <Image Source="fondo.png" HorizontalOptions="CenterAndExpand" />
+            <Button Text="Ingresar" BorderColor="Black" x:Name="btnIngresar" Clicked="btnIngresar_Clicked" 
+                    BackgroundColor="Transparent" TextColor="Wheat" FontSize="Medium" FontAttributes="Bold" IsVisible="False" />
+            <Label Text="Active su internet para poder accesar." HorizontalOptions="CenterAndExpand" x:Name="lblMensaje"
+                   FontAttributes="Bold" FontSize="Medium" TextColor="White" IsVisible="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

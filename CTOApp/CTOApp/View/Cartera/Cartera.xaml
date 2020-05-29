@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             mc:Ignorable="d"
+             x:Class="CTOApp.View.Cartera.Cartera">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="5" VerticalOptions="StartAndExpand" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Picker Title="--Seleccione Oficina--" x:Name="pkOficina" ItemDisplayBinding="{Binding value}" SelectedIndexChanged="pkOficina_SelectedIndexChanged" Grid.Row="0"/>
+
+                    <Frame Grid.Row="1" BorderColor="LightGray" Margin="5" CornerRadius="15">
+                        <Frame.Content>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Fecha Corte: " HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblFcorte" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Saldo Cartera: " HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblSaldoCartera" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"  Spacing="5">
+                                    <Label Text="Saldo Vigente: " HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblSaldoVigente" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"  Spacing="5">
+                                    <Label Text="Saldo Atrasado: " HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblSaldoAtrasado" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"  Spacing="5">
+                                    <Label Text="Saldo Vencido: " HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblSaldoVencida" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame.Content>
+                    </Frame>
+
+                    <StackLayout Orientation="Vertical" Spacing="5" Grid.Row="2" Margin="5" Padding="5">
+                        <Label Text="GRAFICACIÓN SALDO CARTERA POR ESTADO" TextColor="SandyBrown" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold"/>
+                        <forms:ChartView x:Name="graphCartera"  HeightRequest="300" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Spacing="5" Grid.Row="3">
+                        <forms:ChartView x:Name="graphCartera2" Grid.Row="3" HeightRequest="300" />
+                    </StackLayout>
+
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

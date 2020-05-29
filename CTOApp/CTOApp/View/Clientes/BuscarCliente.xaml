@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CTOApp.View.Clientes.BuscarCliente">
+    <ContentPage.Content>
+        <StackLayout Margin="2" Orientation="Vertical" Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Orientation="Vertical" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.4*"/>
+                        </Grid.ColumnDefinitions>
+                        <SearchBar x:Name="sbBuscar"  Placeholder="Ingrese Cliente a Buscar..." Grid.Column="0"/>                        
+                        <Button x:Name="btnBuscar" Text="Buscar" Clicked="btnBuscar_Clicked"  Grid.Column="1" BackgroundColor="SaddleBrown" TextColor="White"/>
+                    </Grid>
+                </StackLayout>
+
+                <ListView x:Name="lvClientes" Grid.Row="1" HasUnevenRows="False" SeparatorVisibility="None" ItemSelected="lvClientes_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                    <Image Source="user.png" Aspect="AspectFit" BackgroundColor="White" Grid.Column="0" />
+                                    <StackLayout Orientation="Vertical" Grid.Column="1">
+                                        <Label Text="{Binding personalidadjuridicaId}" TextColor="SaddleBrown" FontAttributes="Bold" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+                                        <Label Text="{Binding Cliente}" TextColor="SaddleBrown" FontSize="Small" FontAttributes="Bold" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

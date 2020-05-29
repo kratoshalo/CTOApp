@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CTOApp.View.Clientes.Credito">
+    <ContentPage.Content>
+        <StackLayout Margin="5" Padding="5" Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Frame HeightRequest="250" Grid.Row="0" CornerRadius="15">
+                    <Frame.Content>
+                        <ScrollView>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Producto" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblProducto" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Pagaré" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblPagare" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Fecha Desembolso" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblFDesembolso" HorizontalOptions="EndAndExpand" FontAttributes="Italic"  HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Fecha Vencimiento" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblFVenc" HorizontalOptions="EndAndExpand" FontAttributes="Italic"  HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Fecha corte" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblFCorte" HorizontalOptions="EndAndExpand" FontAttributes="Italic"  HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Monto Desembolso" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblMonto" HorizontalOptions="EndAndExpand" FontAttributes="Italic"  HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Tasa Interés" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblTInteres" HorizontalOptions="EndAndExpand" FontAttributes="Italic"  HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Tasa Moratoria" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblTMoratoria" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Estado" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblEstado" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Días Mora" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblDiasMora" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Saldo" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblSaldo" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Capital" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblCapital" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Interes" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblInteres" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Moratorios" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblMoratorios" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Text="Renegociado" HorizontalOptions="StartAndExpand" TextColor="SandyBrown" FontAttributes="Bold"/>
+                                    <Label x:Name="lblRenegociado" HorizontalOptions="EndAndExpand" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ScrollView>
+                    </Frame.Content>
+                </Frame>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Grid.Row="1">
+                    <Label Text="PAGOS REALIZADOS" TextColor="SaddleBrown" FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="False"
+                           x:Name="lblLetrero"/>
+                </StackLayout>
+
+                <ListView Grid.Row="2" HasUnevenRows="False" x:Name="lvPagos">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding fichaFecha}" HorizontalOptions="StartAndExpand" TextColor="SaddleBrown" FontAttributes="Bold"/>
+                                    <Label Text="{Binding fichaITotal, StringFormat='{0:C}'}" HorizontalOptions="EndAndExpand" TextColor="SaddleBrown" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
